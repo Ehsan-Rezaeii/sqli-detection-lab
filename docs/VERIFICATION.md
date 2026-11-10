@@ -45,8 +45,26 @@ is not reported as a successful CLI API check.
 
 ## Final verification
 
-Pending until the separate freeze has been committed/pushed and its one final
-scoring pass has completed. This section will be updated with measured outcomes.
+Development commit: `3d59540`; separate freeze commit:
+`9184886cab5b1c851e2ad00237455b641979cece`, pushed before held-out scoring.
+Freeze SHA-256: `ef9a9a33ef62fe41fb45908493cfd7458ef78b5e597e01009ba08e630859f9db`.
+The first final invocation was rejected by the pushed-head guard **before** start
+marker creation or test loading: the checkout fetch refspec tracked only main.
+`git ls-remote` confirmed the pushed freeze commit; fetching the exact feature
+branch into its remote-tracking ref corrected that local metadata. Neither source
+nor freeze was changed. The next invocation created the exclusive start marker
+and completed the only scoring pass, preserved in `results/final/`.
+
+Final local `python experiments/verify.py --final` passed **20 tests, 93% statement
+coverage**, Ruff lint/format, synthetic smoke and artifact audit. The audit checks
+all 24 search traces (1,440 calls, 4,320 search classifier fits), nine frozen model
+hashes and final metrics reconstructed independently from saved anonymous score
+counts. Including outer refits, full-development final fits and sensitivity fits,
+the scientific study performed **4,361 classifier fits**; final scoring used zero.
+Source/wheel build and clean wheel installation/import outputs are in the same
+command log. The wheel package is refreshed explicitly before the final import
+outside the source checkout, avoiding accidental reuse of an earlier wheel.
+
 Final-head CI uses Python 3.10/3.12/3.13, core/synthetic tests, coverage, lint,
 format, smoke, build, clean wheel import and mandatory final artifact audit when
 `results/FINALIZED` exists. Pre-final CI does not erroneously require artifacts

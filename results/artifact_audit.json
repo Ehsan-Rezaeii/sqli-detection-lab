@@ -1,0 +1,19 @@
+{
+  "final_required": true,
+  "freeze_sha256": "ef9a9a33ef62fe41fb45908493cfd7458ef78b5e597e01009ba08e630859f9db",
+  "models_verified": [
+    "ga",
+    "gwo_s",
+    "gwo_v",
+    "hybrid",
+    "kbest",
+    "random",
+    "rules",
+    "structural",
+    "text"
+  ],
+  "objective_evaluations": 1440,
+  "search_classifier_fits": 4320,
+  "search_traces_verified": 24,
+  "status": "passed"
+}

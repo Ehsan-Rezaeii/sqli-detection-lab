@@ -49,6 +49,7 @@ python experiments/verify.py    # real checks and clean wheel installation
 # Commit development source, models, audit and evidence here.
 sqli-lab freeze
 # Commit results/freeze.json separately and push that commit here.
+# If the checkout fetches only main, fetch the exact feature branch into origin first.
 sqli-lab final                  # one exclusive, frozen held-out scoring pass
 python experiments/report.py
 sqli-lab audit --require-final

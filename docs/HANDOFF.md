@@ -3,8 +3,11 @@
 The research prototype is implemented; consult [results](RESULTS.md) for measured
 comparisons and [verification](VERIFICATION.md) for actual executed checks and
 remote CI status. The repository remains a reviewable, unmerged feature branch.
-The completion record will name the development and freeze commits, final head,
-artifact digest and PR after those operations actually complete.
+Development evidence is committed at `3d59540`; freeze is
+`9184886cab5b1c851e2ad00237455b641979cece`, with SHA-256
+`ef9a9a33ef62fe41fb45908493cfd7458ef78b5e597e01009ba08e630859f9db`.
+Final start/completion markers prove one scoring pass after the pushed freeze.
+The PR/head and CI links are supplied in the completion report and CI record.
 
 The demo model is **hybrid**, selected solely by the declared development outer
 F1/FPR/name rule. It is not chosen from held-out scores. All nine methods remain
@@ -35,3 +38,11 @@ Text artifacts contain short n-gram vocabulary fragments. Measured CSR buffer
 size is not peak RSS; local inference latency is not a throughput guarantee.
 The API is experimental, read-only and not SQL injection prevention or a WAF.
 Parameterized queries and OWASP's primary defenses remain necessary.
+
+The frozen hybrid held-out result is precision 0.999536, recall 1.0, F1 0.999768,
+FPR 0.000258: TN=3,878, FP=1, FN=0, TP=2,153. Structural has the same final confusion
+counts, despite the development rule choosing hybrid. No model switch was made.
+The held-out percent-encoded stratum has zero support; synthetic Unicode/encoding
+API acceptance tests establish input handling only. Optimizers can retain constant
+columns under finite budgets. Full masks and exact runtime settings are frozen;
+these are research comparisons, not optimality guarantees.

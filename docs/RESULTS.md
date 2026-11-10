@@ -18,6 +18,20 @@ Demo selected using development only: **hybrid**.
 | gwo_v | 0.999308 | 0.997470 | 0.998388 ± 0.000723 | 0.000389 | 0.999916 |
 | random | 0.999538 | 0.996786 | 0.998159 ± 0.000692 | 0.000259 | 0.999911 |
 
+## One frozen held-out pass
+
+| Method | Precision | Recall | F1 | FPR | AP | TN/FP/FN/TP | Dim |
+|---|---:|---:|---:|---:|---:|---|---:|
+| rules | 1.000000 | 0.534603 | 0.696731 | 0.000000 | N/A | 3879/0/1002/1151 | 0 |
+| structural | 0.999536 | 1.000000 | 0.999768 | 0.000258 | 0.999999 | 3878/1/0/2153 | 20 |
+| text | 1.000000 | 0.998142 | 0.999070 | 0.000000 | 0.999978 | 3879/0/4/2149 | 40000 |
+| hybrid | 0.999536 | 1.000000 | 0.999768 | 0.000258 | 1.000000 | 3878/1/0/2153 | 40020 |
+| kbest | 0.997675 | 0.996749 | 0.997212 | 0.001289 | 0.999967 | 3874/5/7/2146 | 8 |
+| ga | 1.000000 | 0.997678 | 0.998837 | 0.000000 | 1.000000 | 3879/0/5/2148 | 7 |
+| gwo_s | 0.999534 | 0.995820 | 0.997673 | 0.000258 | 0.999955 | 3878/1/9/2144 | 6 |
+| gwo_v | 0.999070 | 0.997678 | 0.998373 | 0.000516 | 0.999933 | 3877/2/5/2148 | 5 |
+| random | 0.999535 | 0.997678 | 0.998605 | 0.000258 | 0.999985 | 3878/1/5/2148 | 8 |
+
 ## Cost and seed variation
 
 Each search has 60 objective calls; each nonempty call fits three LRs.
@@ -57,3 +71,59 @@ length/encoding/keyword strata only; no third-party payloads are republished.
 ![F1 comparison](../results/plots/f1.png)
 
 ![Full-development search traces](../results/plots/convergence.png)
+
+## Measured fitting, inference and memory
+
+| Method | Full-dev fit s | Held-out batch ms/item | Single-item ms | Held-out matrix bytes |
+|---|---:|---:|---:|---:|
+| ga | 0.661585 | 0.035998 | 0.468168 | 337792 |
+| gwo_s | 1.495723 | 0.024603 | 0.384060 | 289536 |
+| gwo_v | 1.802181 | 0.034713 | 0.441303 | 241280 |
+| hybrid | 6.871631 | 0.172141 | 2.065471 | 8756004 |
+| kbest | 0.932082 | 0.030235 | 0.613354 | 386048 |
+| random | 1.837393 | 0.041280 | 0.368116 | 386048 |
+| rules | 0.000075 | 0.002210 | 0.001852 | 0 |
+| structural | 0.774966 | 0.034917 | 0.597353 | 965120 |
+| text | 4.703642 | 0.133463 | 0.734398 | 7597860 |
+
+These are local wall-clock measurements. The memory column counts transformed buffers;
+it excludes vocabulary, model, temporary allocations and peak RSS. Single-item inference
+uses the first up to 100 partition values; it is not a production benchmark.
+
+## Frozen structural masks
+
+| Method | Selected feature names |
+|---|---|
+| ga | length, single_quotes, equals, dash_comments, hashes, sql_keywords, non_ascii_ratio |
+| gwo_s | space_ratio, punctuation_ratio, parentheses, equals, dash_comments, sql_keywords |
+| gwo_v | punctuation_ratio, single_quotes, hashes, sql_keywords, boolean_keywords |
+| random | length, digit_ratio, punctuation_ratio, equals, dash_comments, block_comments, hashes, boolean_keywords |
+
+## Error strata for the preselected demo
+
+| Stratum | Rows | FP | FN |
+|---|---:|---:|---:|
+| keyword | 1573 | 0 | 0 |
+| length_21_100 | 1856 | 0 | 0 |
+| length_gt_100 | 769 | 0 | 0 |
+| length_le_20 | 3407 | 1 | 0 |
+| no_keyword | 4459 | 1 | 0 |
+| no_percent_encoded | 6032 | 1 | 0 |
+| percent_encoded | 0 | 0 | 0 |
+
+Strata overlap; counts must not be summed across them. No raw held-out values were
+inspected to choose thresholds, change the model, or classify error examples. All methods’
+strata are preserved in `results/final/metrics.json`. The single hybrid false positive
+shows that even this favorable benchmark does not justify blocking real requests.
+
+![Frozen demo confusion counts](../results/plots/confusion.png)
+
+The held-out percent-encoded stratum is empty, so this study provides no measured
+encoded-payload generalization evidence. Constant ANOVA columns were reported
+rather than hidden. Finite search can retain an uninformative feature (for example,
+GA's non-ASCII ratio and RandomSearch's block-comment count); selected count does
+not mean every retained variable has predictive value. AP near one does not imply
+zero false positives at the predeclared probability threshold, which remains 0.5.
+The tiny outer F1 difference between hybrid and structural is not a significance
+claim; the much larger hybrid representation should be considered when interpreting
+its development-only selection.

@@ -1,0 +1,298 @@
+{
+  "head_commit": "f0f0b8d74ab3edd6fde816b36b779b58344e896b",
+  "run_id": 42898191861,
+  "url": "https://github.com/Ehsan-Rezaeii/sqli-detection-lab/actions/runs/42898191861",
+  "jobs": [
+    {
+      "id": 130116808802,
+      "name": "verify (3.13)",
+      "conclusion": "success",
+      "url": "https://github.com/Ehsan-Rezaeii/sqli-detection-lab/actions/runs/42898191861/job/130116808802",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run python -m pip install -e '.[dev]'",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run ruff check . && ruff format --check .",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run pytest -q --cov=sqli_detection_lab --cov-report=xml --cov-report=term-missing",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run sqli-lab smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Freeze and final artifact checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run python -m build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Clean wheel installation and import",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23
+        }
+      ],
+      "verified_log_lines": [
+        "2026-11-10T20:45:16.5564163Z TOTAL                                    629     44    93%",
+        "2026-11-10T20:45:16.5565149Z 20 passed, 19 warnings in 21.40s",
+        "2026-11-10T20:45:19.0596457Z {'freeze_sha256': 'ef9a9a33ef62fe41fb45908493cfd7458ef78b5e597e01009ba08e630859f9db', 'models_verified': ['ga', 'gwo_s', 'gwo_v', 'hybrid', 'kbest', 'random', 'rules', 'structural', 'text'], 'search_traces_verified': 24, 'objective_evaluations': 1440, 'search_classifier_fits': 4320, 'final_required': True, 'status': 'passed'}"
+      ]
+    },
+    {
+      "id": 130116809132,
+      "name": "verify (3.10)",
+      "conclusion": "success",
+      "url": "https://github.com/Ehsan-Rezaeii/sqli-detection-lab/actions/runs/42898191861/job/130116809132",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run python -m pip install -e '.[dev]'",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run ruff check . && ruff format --check .",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run pytest -q --cov=sqli_detection_lab --cov-report=xml --cov-report=term-missing",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run sqli-lab smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Freeze and final artifact checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run python -m build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Clean wheel installation and import",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23
+        }
+      ],
+      "verified_log_lines": [
+        "2026-11-10T20:45:11.9438587Z TOTAL                                    629     44    93%",
+        "2026-11-10T20:45:11.9439386Z 20 passed, 19 warnings in 23.83s",
+        "2026-11-10T20:45:15.0472270Z {'freeze_sha256': 'ef9a9a33ef62fe41fb45908493cfd7458ef78b5e597e01009ba08e630859f9db', 'models_verified': ['ga', 'gwo_s', 'gwo_v', 'hybrid', 'kbest', 'random', 'rules', 'structural', 'text'], 'search_traces_verified': 24, 'objective_evaluations': 1440, 'search_classifier_fits': 4320, 'final_required': True, 'status': 'passed'}"
+      ]
+    },
+    {
+      "id": 130116809191,
+      "name": "verify (3.12)",
+      "conclusion": "success",
+      "url": "https://github.com/Ehsan-Rezaeii/sqli-detection-lab/actions/runs/42898191861/job/130116809191",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Run python -m pip install -e '.[dev]'",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Run ruff check . && ruff format --check .",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Run pytest -q --cov=sqli_detection_lab --cov-report=xml --cov-report=term-missing",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Run sqli-lab smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Freeze and final artifact checks",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Run python -m build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Clean wheel installation and import",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23
+        }
+      ],
+      "verified_log_lines": [
+        "2026-11-10T20:45:22.7925928Z TOTAL                                    629     44    93%",
+        "2026-11-10T20:45:22.7927757Z 20 passed, 19 warnings in 32.90s",
+        "2026-11-10T20:45:25.7388850Z {'freeze_sha256': 'ef9a9a33ef62fe41fb45908493cfd7458ef78b5e597e01009ba08e630859f9db', 'models_verified': ['ga', 'gwo_s', 'gwo_v', 'hybrid', 'kbest', 'random', 'rules', 'structural', 'text'], 'search_traces_verified': 24, 'objective_evaluations': 1440, 'search_classifier_fits': 4320, 'final_required': True, 'status': 'passed'}"
+      ]
+    }
+  ]
+}

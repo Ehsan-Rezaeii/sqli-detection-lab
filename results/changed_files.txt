@@ -85,6 +85,7 @@ results/verification/development.txt
 results/verification/execution_events.json
 results/verification/final.txt
 results/verification/final_guard_failure.txt
+results/verification/github_actions.json
 results/verification/initial/development_bounded_pattern_restart.txt
 results/verification/initial/development_metadata_restart.txt
 results/verification/initial/pytest_initial.txt

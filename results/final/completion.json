@@ -1,0 +1,18 @@
+{
+  "artifact_hashes": {
+    "results/final/metrics.json": "ca40345525903cbacfed7e1992d7f4c43d6d321cde0eada4307c0cc3167570b1",
+    "results/final/scores_ga.npz": "f8686a23f07914afb37d57370304d1245093d45e290fc957e4b8d094fbf35e8f",
+    "results/final/scores_gwo_s.npz": "eaf2eeeab32d9b82bc9930e161b7329e0ee38014a3a8b23f6751cfa93d67ceb6",
+    "results/final/scores_gwo_v.npz": "f722c611ff6b87078c74eb405920ed6af868da09db669e39a8051290b73243db",
+    "results/final/scores_hybrid.npz": "afb8a370ab1f43efc3949cab0c8267535e729061e80fb12fef38f1f9deca7c6f",
+    "results/final/scores_kbest.npz": "1ecae4f7c27f57f6b0b4d1b0fff5b2217d4a8f6e2b993faab95ec3e9c1bfc178",
+    "results/final/scores_random.npz": "0030d62923fb1ce03d61da07af0492fbb0e94dc314778d14cb5498f79aa9ee5c",
+    "results/final/scores_rules.npz": "8ea588ad2912f81ab3b166f829a94144f01c0497c393083f802b2d2365595c9f",
+    "results/final/scores_structural.npz": "1fea8def0777071fb7002ee07742b7931e91cbb21adf1969ea9131b1db6628ae",
+    "results/final/scores_text.npz": "247b8bdd160bef5b76e25bafb7a6a1bb6d8d9a94cedc8e5c6bf20277eef8f627",
+    "results/final/started.json": "d71ca6343d1fa92c34c3022b71c8458e3c925304d59ddb34543aec6656dbbe01"
+  },
+  "completed_at": "2026-11-10T20:40:29.854159+00:00",
+  "final_passes": 1,
+  "freeze_sha256": "ef9a9a33ef62fe41fb45908493cfd7458ef78b5e597e01009ba08e630859f9db"
+}

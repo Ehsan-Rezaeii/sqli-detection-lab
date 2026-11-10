@@ -1,0 +1,72 @@
+[
+  {
+    "command": "pytest -q --cov=sqli_detection_lab --cov-report=term-missing",
+    "exit_code": 1,
+    "outcome": "5 failed, 11 passed, 1 skipped; mock constructor metadata and missing synthetic freeze fixture; corrected",
+    "phase": "initial"
+  },
+  {
+    "command": "pytest -q --cov=sqli_detection_lab --cov-report=term-missing",
+    "exit_code": 1,
+    "outcome": "1 failed, 16 passed, 1 skipped; stress grouping collapsed numbered fixture into only two groups; changed synthetic identifiers to distinct alphabetic tokens",
+    "phase": "synthetic integration initial"
+  },
+  {
+    "command": "sqli-lab development",
+    "outcome": "Two early runs intentionally stopped before completion to bound rule intermediary and correct representation/split metadata. No held-out scoring.",
+    "phase": "early interrupted development only"
+  },
+  {
+    "command": "sqli-lab development",
+    "exit_code": 0,
+    "outcome": "27 outer evaluations, 24 searches, 9 sensitivity fits and 9 development model fits; stdout saved",
+    "phase": "completed development"
+  },
+  {
+    "command": "gh auth status; gh api repos/Ehsan-Rezaeii/sqli-detection-lab",
+    "outcome": "CLI API unavailable/Forbidden; Git transport works, connected GitHub tools used for PR and CI",
+    "phase": "connectivity"
+  },
+  {
+    "command": "python experiments/report.py",
+    "exit_code": 0,
+    "outcome": "Matplotlib fell back to writable temporary cache; no result impact",
+    "phase": "development report"
+  },
+  {
+    "command": "sqli-lab final",
+    "exit_code": 1,
+    "outcome": "Rejected before creating start marker or loading test data: checkout fetch refspec tracked only origin/main, so pushed feature ref was absent locally.",
+    "phase": "pre-scoring guard"
+  },
+  {
+    "command": "git ls-remote origin refs/heads/feat/project4-complete-study; git fetch origin feat/project4-complete-study:refs/remotes/origin/feat/project4-complete-study",
+    "exit_code": 0,
+    "outcome": "Confirmed remote freeze head 9184886cab5b1c851e2ad00237455b641979cece; fetched exact remote branch; source/freeze unchanged.",
+    "phase": "guard correction"
+  },
+  {
+    "command": "sqli-lab final",
+    "exit_code": 0,
+    "outcome": "One exclusive start/completion marker; all nine models scored with zero model fits/objective calls.",
+    "phase": "single held-out scoring pass"
+  },
+  {
+    "command": "sqli-lab audit --require-final",
+    "exit_code": 0,
+    "outcome": "24 traces, 1440 objective calls, 4320 search fits, 9 model identities and final metrics reconstructed from aggregate scores verified.",
+    "phase": "final independent artifact audit"
+  },
+  {
+    "command": "git diff --cached --name-only main",
+    "exit_code": 128,
+    "outcome": "No local main branch; used origin/main. No scientific files affected.",
+    "phase": "inventory"
+  },
+  {
+    "command": "python inline handoff updater",
+    "exit_code": 1,
+    "outcome": "Syntax error before writes; corrected helper. No scientific files affected.",
+    "phase": "documentation"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "group_overlap": 0,
+    "train": {
+      "class_counts": {
+        "0": 10274,
+        "1": 5808
+      },
+      "group_sha256": "8ecda2e6dcbf48387a1ed8b9c74531f607694a9afe68bc7acbe0668d049627db",
+      "groups": 16082,
+      "index_sha256": "6b34c25ac8b87a0c52ce7d2bcb7cc52770e3eddd279bcd41755f66f60e11eb90",
+      "rows": 16082
+    },
+    "validation": {
+      "class_counts": {
+        "0": 5151,
+        "1": 2891
+      },
+      "group_sha256": "0b0dd897d86cb73703b6df862ce2c7891b5680609c010d79dab86c876947eaf8",
+      "groups": 8042,
+      "index_sha256": "7859441516b681b9b9e418c3211873ac127f518fedc94b1ea8c78b2d25d5551e",
+      "rows": 8042
+    }
+  },
+  {
+    "group_overlap": 0,
+    "train": {
+      "class_counts": {
+        "0": 10298,
+        "1": 5785
+      },
+      "group_sha256": "55bb56b7e3ce8e7eec5f0c5899bcd260c2c03c329b09a8f7de6ed91d697939f7",
+      "groups": 16083,
+      "index_sha256": "25aad4c3355c9cf74a7af9b2aa799d0ec3d12884466d87982636f91019a5a8d7",
+      "rows": 16083
+    },
+    "validation": {
+      "class_counts": {
+        "0": 5127,
+        "1": 2914
+      },
+      "group_sha256": "c719edb25b2967c0c9eb7c8d5b197ce51c534c11d36d9ba404bc206acea63718",
+      "groups": 8041,
+      "index_sha256": "5af4463eb6251c7e20a38643cb30f24a31dc6b73c12c4e76a5e6bb35bf9a0657",
+      "rows": 8041
+    }
+  },
+  {
+    "group_overlap": 0,
+    "train": {
+      "class_counts": {
+        "0": 10278,
+        "1": 5805
+      },
+      "group_sha256": "973a5ed3c0c03b1f1b040a4b38ccce07cfab3e185b7afa7e676e284422efbb60",
+      "groups": 16083,
+      "index_sha256": "32937ecb31a5b9a3fd9c2694f53e1fd70f434357c1e1c3b5de816cc0506f37dc",
+      "rows": 16083
+    },
+    "validation": {
+      "class_counts": {
+        "0": 5147,
+        "1": 2894
+      },
+      "group_sha256": "ffae1cc4b5150f27d6b7e6fac70a12be8e597740fe64a9fff78af604dc11e26f",
+      "groups": 8041,
+      "index_sha256": "f0bad40042b1abffb7e621d994ce55673d7d0871a12c71679b86140343952f22",
+      "rows": 8041
+    }
+  }
+]

@@ -1,0 +1,58 @@
+....................                                                     [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:37
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+tests/test_cli.py::test_synthetic_smoke_cli
+tests/test_core.py::test_all_baselines_and_seed_selection
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [ 4  5  6  7  8  9 10 11 12 13 14 15 16 17 19] are constant.
+    warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+
+tests/test_cli.py::test_synthetic_smoke_cli
+tests/test_core.py::test_all_baselines_and_seed_selection
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:111: RuntimeWarning: divide by zero encountered in divide
+    f = msb / msw
+
+tests/test_cli.py::test_synthetic_smoke_cli
+tests/test_core.py::test_all_baselines_and_seed_selection
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:111: RuntimeWarning: invalid value encountered in divide
+    f = msb / msw
+
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [ 0  1  4  5  6  7  8  9 10 11 12 13 14 15 16 17 19] are constant.
+    warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Name                                   Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------
+src/sqli_detection_lab/__init__.py         1      0   100%
+src/sqli_detection_lab/api.py             45      0   100%
+src/sqli_detection_lab/artifacts.py      101     13    87%   22, 53, 58, 61, 63, 95, 100, 112, 114, 119, 123, 140, 142
+src/sqli_detection_lab/cli.py             27      6    78%   23, 25, 27, 29, 31, 33
+src/sqli_detection_lab/data.py           102     21    79%   41-45, 48-50, 63, 73, 77, 83-84, 138, 140, 155-167
+src/sqli_detection_lab/experiment.py     163      2    99%   269, 291
+src/sqli_detection_lab/features.py        30      0   100%
+src/sqli_detection_lab/io.py              13      0   100%
+src/sqli_detection_lab/metrics.py         12      0   100%
+src/sqli_detection_lab/models.py          59      0   100%
+src/sqli_detection_lab/selection.py       62      2    97%   27, 103
+src/sqli_detection_lab/smoke.py           14      0   100%
+--------------------------------------------------------------------
+TOTAL                                    629     44    93%
+Coverage JSON written to file results/verification/coverage.json
+20 passed, 19 warnings in 75.30s (0:01:15)

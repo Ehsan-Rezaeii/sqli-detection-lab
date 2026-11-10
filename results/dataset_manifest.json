@@ -1,0 +1,43 @@
+{
+  "all_empty_values": 0,
+  "attack_types": {
+    "cmdi": 89,
+    "norm": 19304,
+    "path-traversal": 290,
+    "sqli": 10852,
+    "xss": 532
+  },
+  "bytes": 1996540,
+  "canonical_duplicate_excess_primary": 0,
+  "canonical_duplicated_groups_primary": 0,
+  "conflict_groups": 0,
+  "encoding": "utf-8",
+  "header": [
+    "payload",
+    "length",
+    "attack_type",
+    "label"
+  ],
+  "invalid_primary_rows": 0,
+  "labels": {
+    "anom": 11763,
+    "norm": 19304
+  },
+  "length_metadata_mismatches": 15,
+  "max_length": 1058,
+  "policy": "Quarantine empty/over-100000-character rows and entire conflicting groups; retain duplicates.",
+  "quarantined_by_class": {},
+  "raw_duplicate_excess_primary": 0,
+  "raw_duplicated_groups_primary": 0,
+  "records": 31067,
+  "retained_class_counts": {
+    "0": 19304,
+    "1": 10852
+  },
+  "retained_groups": 30156,
+  "retained_rows": 30156,
+  "rights": "Upstream MIT; constituent rights not fully verified. No raw redistribution.",
+  "sha256": "a4e62ba13435ad3dd583c5790db2175629020fc41c56e1b26baa02a9ae45f03d",
+  "source_commit": "926670a710283f87c05b554680facf3f9530548c",
+  "url": "https://raw.githubusercontent.com/Morzeux/HttpParamsDataset/926670a710283f87c05b554680facf3f9530548c/payload_full.csv"
+}

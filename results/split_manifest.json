@@ -1,0 +1,24 @@
+{
+  "development": {
+    "class_counts": {
+      "0": 15425,
+      "1": 8699
+    },
+    "group_sha256": "e31794287b07aba4bcee18c8b7a5689fcef48c6c29f768f60897b08eaa0e92f9",
+    "groups": 24124,
+    "index_sha256": "d7dc151bb3de786345a2d0d14ce1f5348495eaa4f2eae2f36d7b822aeb7fe7b7",
+    "rows": 24124
+  },
+  "group_overlap": 0,
+  "protocol": "SGKF 5/2027 fold 0 holdout; outer 3/2028; inner 3/2029",
+  "test": {
+    "class_counts": {
+      "0": 3879,
+      "1": 2153
+    },
+    "group_sha256": "5925a81ffef7ba34d28aeaa0c824f9c1829918e9300a60625e136c791b3a6fe9",
+    "groups": 6032,
+    "index_sha256": "e6e01e397d0989a9301fad03eaf0037964e8c332bf5c848ebf3d871e289b5582",
+    "rows": 6032
+  }
+}

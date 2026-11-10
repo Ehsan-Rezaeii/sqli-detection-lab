@@ -1,36 +1,114 @@
 # SQL Injection Detection Lab
 
-A reproducible research project comparing **hand-engineered structural features**, **character n-gram TF-IDF**, a **hybrid representation**, and **Binary GA/GWO feature selection** for classifying SQL-injection-like HTTP parameter values. An experimental **FastAPI** inference interface is included in the approved scope.
+An installable research prototype comparing nine classifiers of inert HTTP
+parameter values: fixed rules, structural logistic regression, sparse character
+TF-IDF, hybrid, SelectKBest, and structural-only Binary GA/GWO-S/GWO-V/RandomSearch.
+The optimizers are imported from the actual pinned [Project 1](https://github.com/Ehsan-Rezaeii/metaheuristics-lab/tree/6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e)
+dependency. See [measured results](docs/RESULTS.md), [protocol](docs/EXPERIMENT_PROTOCOL.md)
+and [verification](docs/VERIFICATION.md) for the evidence and completion status.
 
-> **Kickoff status:** research design and Codex implementation instructions are prepared. Code, experiments, final models, tests, and measured performance are **not yet completed or verified**. This README must be updated with genuine results only after execution and independent review.
+**Experimental classifier, not a prevention or WAF control.** No SQL is executed,
+no database is contacted, and no target is scanned. Actual SQL injection prevention
+requires [OWASP's primary defenses](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html):
+parameterized queries/prepared statements, allowlists for dynamic identifiers,
+least privilege and secure application design.
 
-## Research questions
+## Install and verify
 
-- Do different feature representations change SQLi-positive Precision, Recall, F1 and false-positive rate?
-- Can metaheuristic structural feature selection reduce feature count without sacrificing performance against simple baselines?
-- What do duplicate groups, source-generated patterns, and computation cost reveal about generalization?
+Python 3.10, 3.12 and 3.13 are the CI targets; the local study uses Python 3.12.
 
-## Planned comparisons
+```bash
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -e '.[dev]'
+pytest -q --cov=sqli_detection_lab
+ruff check .
+ruff format --check .
+sqli-lab smoke                 # synthetic-only; not benchmark evidence
+python -m build
+```
 
-- Deterministic rule-based baseline.
-- All structural features + Logistic Regression.
-- Character n-gram TF-IDF + Logistic Regression.
-- Hybrid structural + sparse text features + Logistic Regression.
-- SelectKBest on structural features.
-- Binary GA, Binary GWO (S/V), and binary Random Search on **structural features only** using the actual pinned [Project 1 library](https://github.com/Ehsan-Rezaeii/metaheuristics-lab).
+The direct Git dependency requires Git and network access during installation.
+Pinned numeric/model versions are enforced before loading trusted frozen models.
+`results/requirements-observed.txt` records the full observed environment;
+`pyproject.toml` pins the direct dependencies. CI does not download the raw dataset.
 
-## Planned data and evaluation
+## Reproduce the scientific stages
 
-Primary candidate: [HttpParamsDataset](https://github.com/Morzeux/HttpParamsDataset), specifically the immutable `payload_full.csv` at commit `926670a710283f87c05b554680facf3f9530548c`. The primary target distinguishes `norm` from `sqli`. The upstream source combines benign data with tool-generated payloads; therefore apparent test accuracy may not transfer to real HTTP traffic. Data rights for constituent sources must be audited before redistributing sample values.
+Raw data remain outside Git. [Provenance/rights](docs/DATA_PROVENANCE.md) identifies
+the exact upstream commit, byte size, SHA-256 and source limitations. From a clean
+work branch **without an existing freeze/final result**, run:
 
-The study will use group-disjoint development/holdout separation, training-fold-only vectorization and feature selection, a pre-committed final freeze, and saved reproducible numerical evidence. See [PROJECT_SPEC.md](docs/PROJECT_SPEC.md).
+```bash
+sqli-lab acquire                # immutable URL, timeout, exact size/hash checks
+# or: sqli-lab acquire --offline /path/to/payload_full.csv
+sqli-lab prepare                # persist provenance and split audit before training
+sqli-lab development            # all nested CV, seeds, stress grouping, development fits
+python experiments/report.py    # development tables, schema and plots
+python experiments/verify.py    # real checks and clean wheel installation
+# Commit development source, models, audit and evidence here.
+sqli-lab freeze
+# Commit results/freeze.json separately and push that commit here.
+# If the checkout fetches only main, fetch the exact feature branch into origin first.
+sqli-lab final                  # one exclusive, frozen held-out scoring pass
+python experiments/report.py
+sqli-lab audit --require-final
+python experiments/verify.py --final
+```
 
-## Security limitations
+An existing finalized checkout is for auditing/inference. Do not delete its markers
+or overwrite its results to make another run appear fresh. For independent
+reproduction use a new clearly named result history and identify prior holdout
+exposure. The final command refuses an uncommitted freeze, dirty source, unpushed
+HEAD, changed models/evidence or an existing start marker. Recovery from partial
+failure requires an honest event log and a new documented decision; there is no
+automatic retry. Frozen pipelines are fitted only on development data.
 
-**This is not a vulnerability scanner, WAF, or SQL injection prevention mechanism.** No database is queried and no supplied payload is executed. The API is a local demonstration only. Actual prevention depends on [parameterized queries, safe handling of dynamic query structure, and least privilege](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html).
+## Local read-only API demonstration
 
-## Implementation instructions
+Run from the trusted repository root after verifying its artifacts:
 
-Codex should first read [AGENTS.md](AGENTS.md) and [PROJECT_SPEC.md](docs/PROJECT_SPEC.md), then implement, test, execute real experiments, document limitations and open an unmerged PR. Do not insert fabricated result tables or success badges.
+```bash
+sqli-lab audit --require-final
+uvicorn sqli_detection_lab.api:create_app --factory --host 127.0.0.1 --port 8000 --no-access-log
+```
 
-**Repository license:** To be chosen by the owner (MIT is suitable for original code). Upstream data licensing and attribution must be assessed independently; do not assume the repository license grants rights over all dataset content.
+`GET /health` reports readiness. `POST /predict` takes exactly one JSON object,
+for example `{"value":"synthetic catalogue item"}`. Only strings of at most
+2,048 characters are accepted, including empty strings; extra fields, wrong
+types and oversized strings receive 422. Replies contain `label`, positive-class
+`score`, `model_id`, and the experimental warning. Missing/untrusted artifacts
+produce 503. No raw input logging is implemented. There is no download, training,
+SQL connection, query construction, URL fetch or payload execution at startup
+or prediction time. The demo is intentionally bound to loopback and provides no
+production authentication, monitoring, throughput or adversarial robustness claim.
+
+Joblib files can execute code when loaded. Only use these locally produced files
+from a trusted checkout and its committed checksum freeze. Checksums are not
+signatures and cannot defend against an attacker replacing both model and trust
+manifest. No model-upload endpoint is provided. Text-model exports contain short
+n-gram vocabulary fragments but do not store source rows.
+
+## Evidence and limitations
+
+The primary cohort has 30,156 values: 24,124 development and 6,032 held-out, all
+canonical groups disjoint. Primary exact/canonical duplicates and conflicts are
+absent at the pinned source commit; stronger template similarity remains. Outer
+CV is three group-aware folds with inner three-fold mask search. Every optimizer
+run uses population 12 and exactly 60 objective evaluations; classifier fits are
+reported separately. Model choice uses development only; all nine final methods
+are reported together after a separate committed/pushed freeze.
+
+CSIC benign values versus sqlmap-generated SQLi create substantial source
+confounding. Source labels do not prove exploitability. A grouping stress test
+is not independent real-world validation. Fold SD and seed variability are
+not evidence of statistical significance. False positives and false negatives
+remain consequential. There is no production-security, attack-evasion or
+cross-source generalization claim. Constituent data redistribution rights remain
+unverified; raw payloads and source-row-aligned labels are not published.
+
+[Walkthrough](docs/IMPLEMENTATION_WALKTHROUGH.md) · [Handoff](docs/HANDOFF.md) ·
+[Specification](docs/PROJECT_SPEC.md) · [Data audit](results/dataset_manifest.json)
+
+Original code: MIT (see LICENSE). Dataset and Project 1 attribution are separate;
+this repository's license does not clear constituent data rights.

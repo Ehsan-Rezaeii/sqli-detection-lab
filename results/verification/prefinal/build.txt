@@ -1,0 +1,142 @@
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=77
+  - wheel
+* Getting build dependencies for sdist...
+running egg_info
+writing src/sqli_detection_lab.egg-info/PKG-INFO
+writing dependency_links to src/sqli_detection_lab.egg-info/dependency_links.txt
+writing entry points to src/sqli_detection_lab.egg-info/entry_points.txt
+writing requirements to src/sqli_detection_lab.egg-info/requires.txt
+writing top-level names to src/sqli_detection_lab.egg-info/top_level.txt
+reading manifest file 'src/sqli_detection_lab.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/sqli_detection_lab.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing src/sqli_detection_lab.egg-info/PKG-INFO
+writing dependency_links to src/sqli_detection_lab.egg-info/dependency_links.txt
+writing entry points to src/sqli_detection_lab.egg-info/entry_points.txt
+writing requirements to src/sqli_detection_lab.egg-info/requires.txt
+writing top-level names to src/sqli_detection_lab.egg-info/top_level.txt
+reading manifest file 'src/sqli_detection_lab.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/sqli_detection_lab.egg-info/SOURCES.txt'
+running check
+creating sqli_detection_lab-0.1.0
+creating sqli_detection_lab-0.1.0/src/sqli_detection_lab
+creating sqli_detection_lab-0.1.0/src/sqli_detection_lab.egg-info
+creating sqli_detection_lab-0.1.0/tests
+copying files to sqli_detection_lab-0.1.0...
+copying LICENSE -> sqli_detection_lab-0.1.0
+copying README.md -> sqli_detection_lab-0.1.0
+copying pyproject.toml -> sqli_detection_lab-0.1.0
+copying src/sqli_detection_lab/__init__.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/api.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/artifacts.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/cli.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/data.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/experiment.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/features.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/io.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/metrics.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/models.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/selection.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab/smoke.py -> sqli_detection_lab-0.1.0/src/sqli_detection_lab
+copying src/sqli_detection_lab.egg-info/PKG-INFO -> sqli_detection_lab-0.1.0/src/sqli_detection_lab.egg-info
+copying src/sqli_detection_lab.egg-info/SOURCES.txt -> sqli_detection_lab-0.1.0/src/sqli_detection_lab.egg-info
+copying src/sqli_detection_lab.egg-info/dependency_links.txt -> sqli_detection_lab-0.1.0/src/sqli_detection_lab.egg-info
+copying src/sqli_detection_lab.egg-info/entry_points.txt -> sqli_detection_lab-0.1.0/src/sqli_detection_lab.egg-info
+copying src/sqli_detection_lab.egg-info/requires.txt -> sqli_detection_lab-0.1.0/src/sqli_detection_lab.egg-info
+copying src/sqli_detection_lab.egg-info/top_level.txt -> sqli_detection_lab-0.1.0/src/sqli_detection_lab.egg-info
+copying tests/test_artifacts_api.py -> sqli_detection_lab-0.1.0/tests
+copying tests/test_cli.py -> sqli_detection_lab-0.1.0/tests
+copying tests/test_core.py -> sqli_detection_lab-0.1.0/tests
+copying tests/test_study_gate.py -> sqli_detection_lab-0.1.0/tests
+Writing sqli_detection_lab-0.1.0/setup.cfg
+Creating tar archive
+removing 'sqli_detection_lab-0.1.0' (and everything under it)
+* Building wheel from sdist
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=77
+  - wheel
+* Getting build dependencies for wheel...
+running egg_info
+writing src/sqli_detection_lab.egg-info/PKG-INFO
+writing dependency_links to src/sqli_detection_lab.egg-info/dependency_links.txt
+writing entry points to src/sqli_detection_lab.egg-info/entry_points.txt
+writing requirements to src/sqli_detection_lab.egg-info/requires.txt
+writing top-level names to src/sqli_detection_lab.egg-info/top_level.txt
+reading manifest file 'src/sqli_detection_lab.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/sqli_detection_lab.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/io.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/cli.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/metrics.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/features.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/experiment.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/selection.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/data.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/api.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/models.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/smoke.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/__init__.py -> build/lib/sqli_detection_lab
+copying src/sqli_detection_lab/artifacts.py -> build/lib/sqli_detection_lab
+running egg_info
+writing src/sqli_detection_lab.egg-info/PKG-INFO
+writing dependency_links to src/sqli_detection_lab.egg-info/dependency_links.txt
+writing entry points to src/sqli_detection_lab.egg-info/entry_points.txt
+writing requirements to src/sqli_detection_lab.egg-info/requires.txt
+writing top-level names to src/sqli_detection_lab.egg-info/top_level.txt
+reading manifest file 'src/sqli_detection_lab.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src/sqli_detection_lab.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/sqli_detection_lab
+copying build/lib/sqli_detection_lab/io.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/cli.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/metrics.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/features.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/experiment.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/selection.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/data.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/api.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/models.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/smoke.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/__init__.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+copying build/lib/sqli_detection_lab/artifacts.py -> build/bdist.linux-x86_64/wheel/./sqli_detection_lab
+running install_egg_info
+Copying src/sqli_detection_lab.egg-info to build/bdist.linux-x86_64/wheel/./sqli_detection_lab-0.1.0-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/sqli_detection_lab-0.1.0.dist-info/WHEEL
+creating '/workspace/sqli-detection-lab/dist/.tmp-9kq0_n48/sqli_detection_lab-0.1.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'sqli_detection_lab/__init__.py'
+adding 'sqli_detection_lab/api.py'
+adding 'sqli_detection_lab/artifacts.py'
+adding 'sqli_detection_lab/cli.py'
+adding 'sqli_detection_lab/data.py'
+adding 'sqli_detection_lab/experiment.py'
+adding 'sqli_detection_lab/features.py'
+adding 'sqli_detection_lab/io.py'
+adding 'sqli_detection_lab/metrics.py'
+adding 'sqli_detection_lab/models.py'
+adding 'sqli_detection_lab/selection.py'
+adding 'sqli_detection_lab/smoke.py'
+adding 'sqli_detection_lab-0.1.0.dist-info/licenses/LICENSE'
+adding 'sqli_detection_lab-0.1.0.dist-info/METADATA'
+adding 'sqli_detection_lab-0.1.0.dist-info/WHEEL'
+adding 'sqli_detection_lab-0.1.0.dist-info/entry_points.txt'
+adding 'sqli_detection_lab-0.1.0.dist-info/top_level.txt'
+adding 'sqli_detection_lab-0.1.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built sqli_detection_lab-0.1.0.tar.gz and sqli_detection_lab-0.1.0-py3-none-any.whl

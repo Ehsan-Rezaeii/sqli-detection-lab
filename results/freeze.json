@@ -1,0 +1,357 @@
+{
+  "api_max_length": 2048,
+  "cache_masks": false,
+  "class_mapping": {
+    "norm": 0,
+    "sqli": 1
+  },
+  "created_at": "2026-11-10T20:38:28.675449+00:00",
+  "demo_method": "hybrid",
+  "development_commit": "3d59540927f3247dc9f74c3f203382ca338cd9d5",
+  "empty_mask_penalty": 1.02,
+  "evidence_hashes": {
+    "docs/EXPERIMENT_PROTOCOL.md": "8b186c3059bc88238e9701bcee3f5441055b07994177eb3b8b66716574b08b15",
+    "docs/PROJECT_SPEC.md": "f690b407cb2c3e23dbe930ae36a775803513115c70febe6569c491e9cc9b8b57",
+    "results/dataset_manifest.json": "7e962ee424444c5d9b278791e125c8a09e05e4abc9b674d92514b0159de050da",
+    "results/development/outer.json": "545449f4ded58dcdf9b248ec224041f32e9779dee648456612831c73d66cbb15",
+    "results/development/rule_bound_check.json": "dad3888cfa174b7cd2ea80421945ea7335c26eac779de44c4d706566f1b005f7",
+    "results/development/selection.json": "df2b79fd7c33001838bb26c08aaf256ce3ccecfd64f8063f14b2cc0064353f59",
+    "results/development/sensitivity.json": "c43acac719e6e3c12f263cb77888933ecbca23b526d465f9ecfbd0e2e9c77355",
+    "results/development/split_indices.npz": "0bfdd0b7b055fea4b223a9740baa591c37555540a9f48b24082779c0541ba26d",
+    "results/development/splits.json": "be7d2ba4d7a5f76c5f71eb89e90647bb68769b9a9e5e83b741056b10efe012d3",
+    "results/development/summary.json": "7590364ed75da74ec6b9dc61618e7c6b1b859616c5db8d042d9b4f33211ec99d",
+    "results/development/trace_full_ga_0.json": "d61709f8583d66cf764a85a011d29207d194198a1938c4219b0a47f781e95d04",
+    "results/development/trace_full_ga_1.json": "1b6f830e95c717a9a33390e94059eabb0868aeeaea032ee2d43556e811393e44",
+    "results/development/trace_full_ga_2.json": "df35a2361d751eef0d0ee0084594aacbd9ecd81dad108a7d4a2f1944773ee9e9",
+    "results/development/trace_full_gwo_s_0.json": "d755cfb5ef9f5c43db03cc3bde76e580ee6d23947214b359d76466002ae150e9",
+    "results/development/trace_full_gwo_s_1.json": "fc2b2dce303c72ba5553d475706df265575396c46c5bb50dd38112a5780793ca",
+    "results/development/trace_full_gwo_s_2.json": "f81d32fec459136fa015f6bc9b4cd4973137cf35004f96bc4c8ff55c398e8ece",
+    "results/development/trace_full_gwo_v_0.json": "886ac835f603eab1f2f9b340d3c98e6dbe48daba7beed6f9d215da0baafe8369",
+    "results/development/trace_full_gwo_v_1.json": "d1984bcb7f6187bb09f0f4be646df7db52cbcb149e72c7d015f6d118be7a9b91",
+    "results/development/trace_full_gwo_v_2.json": "37fae7c339cac8cdb443d953699624b16fe9fbee3196f8295990322040e2baeb",
+    "results/development/trace_full_random_0.json": "a86ac8c029d326ed0acd35e196d7a8b78d765825f8734a73e275bf2615e61142",
+    "results/development/trace_full_random_1.json": "93d8793459612b15f418c28f4dfad6aeb7ceb7d988a0438a401f7ec63245a67f",
+    "results/development/trace_full_random_2.json": "7cd1e20e5814c2011c1234bfcefec1865272fb331493727eebe91b49b410404f",
+    "results/development/trace_outer0_ga.json": "66cc293dca9225ea6d71a2e1fb4ec04a396fabb296e929d5c335a3a67c68f356",
+    "results/development/trace_outer0_gwo_s.json": "83a39d2ecdca2cc6cc089e8edc1af61133b8bbe949107ee9d5d3e18118c172a9",
+    "results/development/trace_outer0_gwo_v.json": "b37b90304fa945fddd75fe5895e8467a8171224243e17a639b60e75b30ba85c2",
+    "results/development/trace_outer0_random.json": "5c6b6c314425447744de64be456af534f957ede1eb6568a109e9684cc5e15aae",
+    "results/development/trace_outer1_ga.json": "f9c589755e18428a3132fa091a032cdd39ff4fa4cbd788bf34a2ce7d613e6c14",
+    "results/development/trace_outer1_gwo_s.json": "5f4c6998a5599e03f98917b8b7d16ee208939ba0da471344d3f8722b849134cf",
+    "results/development/trace_outer1_gwo_v.json": "3fa2e31162781e896ab5d6cee82bb4d1cb6b99b390466a2eb76b5272804c35b9",
+    "results/development/trace_outer1_random.json": "a307365d2216055a7fa7f2d6ed3960d9d6d3ff0c8a06ae2de9be5a6708e98894",
+    "results/development/trace_outer2_ga.json": "e5c02b67dee696499999974e77b48a66db091a2293c8fb2b94c180e1cfc5b54d",
+    "results/development/trace_outer2_gwo_s.json": "37f44aea55a36098a76f3561cc530fe757bde58db895fda25fbb231a77a526d5",
+    "results/development/trace_outer2_gwo_v.json": "71b90b5831067ea751cf3c8b1ea0946761462bffa6fd8b1109b6904458e8e574",
+    "results/development/trace_outer2_random.json": "d6584491e97d23ee3408efb11d47160e8e9a7147c742bfe2eff267d4040939f7",
+    "results/environment.json": "995c84a98fa602ca50b1b313a142407172aa6e3d83bbca3da19dacbe2491ed8e",
+    "results/feature_schema.json": "0f7113674ccc609b60efcc40928a823b4309bb3ae20bb288f746558dc904c6bf",
+    "results/requirements-observed.txt": "cd915d6965e95c04b9acb73d97f2cf0f613cfee7e0bc7df14d697cccecfbc978",
+    "results/source_audit.json": "4b98d2c23aaa0e486c74a567b95674a8f1796b815038d4e359d090e7ec433360",
+    "results/split_manifest.json": "73467e6c44e10e87098fe6b422ddfdbebac715874565d8d21c0b146b2083ab7c"
+  },
+  "features": [
+    "length",
+    "digit_ratio",
+    "letter_ratio",
+    "space_ratio",
+    "punctuation_ratio",
+    "single_quotes",
+    "double_quotes",
+    "parentheses",
+    "semicolons",
+    "equals",
+    "dash_comments",
+    "block_comments",
+    "hashes",
+    "backslashes",
+    "percent_encoded",
+    "tokens",
+    "sql_keywords",
+    "boolean_keywords",
+    "unique_char_ratio",
+    "non_ascii_ratio"
+  ],
+  "kbest": {
+    "k": 8,
+    "score_func": "f_classif"
+  },
+  "lr": {
+    "C": 1.0,
+    "max_iter": 1000,
+    "random_state": 2030,
+    "solver": "liblinear"
+  },
+  "masks": {
+    "ga": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "gwo_s": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "gwo_v": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "random": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ]
+  },
+  "model_hashes": {
+    "ga": "7ee7c735c64fe10bcaf61bc724dd65a2c0c2adab7da3e2cc5a253490b01d3e4f",
+    "gwo_s": "cc9a35d4d6a0ddc9ceb6b2eb7ae1f37eede3663b5dd6622488dc7b4cc85c13b7",
+    "gwo_v": "8721484af3d003f5351913d46eb896a574deae217cf3c43b909928e2fb157c38",
+    "hybrid": "192a04c52fdcc83394ecf6ba17dfea2fa802e8146b04efe61088ec26fbc1f3d4",
+    "kbest": "c5dab2e3ebdf6d1d5725302bee7f79a45b4ce6550e675a8039bd2f08dbeb07a2",
+    "random": "086ff5440d60e05a49db100dd45f75188f65e70ea8f707f931c56a18c48872cb",
+    "rules": "aceaa3f74d0df5cf752d0be135bb4c59e500e0b5d352c2a6c9e5861822b1bd86",
+    "structural": "dd047dcfd4a951b33476e553fe9f1fa2cfe1ecebd0a4d007a82e816af3500231",
+    "text": "b91dcfe6d37bc939af22cdec24f15d13953d3564354832a743ed9f894879d344"
+  },
+  "objective": ".50*(1-F1)+.30*FPR+.20*(1-Recall)+.02*feature_fraction",
+  "optimizer_configurations": {
+    "ga": {
+      "class": "BinaryGA",
+      "constructor_kwargs": {
+        "population_size": 12
+      },
+      "constructor_with_defaults": {
+        "crossover_rate": 0.9,
+        "mutation_rate": null,
+        "population_size": 12,
+        "tournament_size": 3
+      },
+      "dependency_commit": "6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e",
+      "domain": "binary",
+      "instance_attributes": {
+        "crossover_rate": 0.9,
+        "mutation_rate": null,
+        "mutation_scale": 0.1,
+        "population_size": 12,
+        "tournament_size": 3
+      },
+      "optimize_kwargs": {
+        "max_evaluations": 60,
+        "outer_seed": 0,
+        "seeds": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "gwo_s": {
+      "class": "BinaryGWO",
+      "constructor_kwargs": {
+        "population_size": 12,
+        "transfer": "s"
+      },
+      "constructor_with_defaults": {
+        "population_size": 12,
+        "transfer": "s"
+      },
+      "dependency_commit": "6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e",
+      "domain": "binary",
+      "instance_attributes": {
+        "population_size": 12,
+        "transfer": "s"
+      },
+      "optimize_kwargs": {
+        "max_evaluations": 60,
+        "outer_seed": 0,
+        "seeds": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "gwo_v": {
+      "class": "BinaryGWO",
+      "constructor_kwargs": {
+        "population_size": 12,
+        "transfer": "v"
+      },
+      "constructor_with_defaults": {
+        "population_size": 12,
+        "transfer": "v"
+      },
+      "dependency_commit": "6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e",
+      "domain": "binary",
+      "instance_attributes": {
+        "population_size": 12,
+        "transfer": "v"
+      },
+      "optimize_kwargs": {
+        "max_evaluations": 60,
+        "outer_seed": 0,
+        "seeds": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "random": {
+      "class": "RandomSearch",
+      "constructor_kwargs": {
+        "domain": "binary",
+        "population_size": 12
+      },
+      "constructor_with_defaults": {
+        "domain": "binary",
+        "population_size": 12
+      },
+      "dependency_commit": "6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e",
+      "domain": "binary",
+      "instance_attributes": {
+        "domain": "binary",
+        "population_size": 12
+      },
+      "optimize_kwargs": {
+        "max_evaluations": 60,
+        "outer_seed": 0,
+        "seeds": [
+          0,
+          1,
+          2
+        ]
+      }
+    }
+  },
+  "protocol": {
+    "development": {
+      "class_counts": {
+        "0": 15425,
+        "1": 8699
+      },
+      "group_sha256": "e31794287b07aba4bcee18c8b7a5689fcef48c6c29f768f60897b08eaa0e92f9",
+      "groups": 24124,
+      "index_sha256": "d7dc151bb3de786345a2d0d14ce1f5348495eaa4f2eae2f36d7b822aeb7fe7b7",
+      "rows": 24124
+    },
+    "group_overlap": 0,
+    "protocol": "SGKF 5/2027 fold 0 holdout; outer 3/2028; inner 3/2029",
+    "test": {
+      "class_counts": {
+        "0": 3879,
+        "1": 2153
+      },
+      "group_sha256": "5925a81ffef7ba34d28aeaa0c824f9c1829918e9300a60625e136c791b3a6fe9",
+      "groups": 6032,
+      "index_sha256": "e6e01e397d0989a9301fad03eaf0037964e8c332bf5c848ebf3d871e289b5582",
+      "rows": 6032
+    }
+  },
+  "source_hashes": {
+    "experiments/audit_source.py": "bd3b006e69d44f06284fc58f09ee21d8a890fd50ac9df35a0ecae2f3426989c8",
+    "experiments/report.py": "bb2f92d4562f3c8830eca08b63f106965fb0434453135718db5df61032f56a66",
+    "experiments/verify.py": "6b61b9782ff9a3c40b0c86cb3fc83788a3d4d3723aabfbf5428f9efbd507d5c4",
+    "pyproject.toml": "efb84d5c306f7aa63d7b9496b903116747b0e9ecd3f00970a8a5de2b9ff695f6",
+    "src/sqli_detection_lab/__init__.py": "1ccea98a110e8a520197af41bb656ad8b30c02dd51acfa4a66c5f6e783ca5c98",
+    "src/sqli_detection_lab/api.py": "67a3a26e4ab9b71cf947a83745c88f6ffa491ca3cfe20ffd48156c5f6ca368e5",
+    "src/sqli_detection_lab/artifacts.py": "060dfd905673acb0f76809d216ff18f3932f9e8c70365e8e66ee0baf99eb1f61",
+    "src/sqli_detection_lab/cli.py": "f529242aa8bafaa4bf56693f41105e4905146b8578664266d0333c516f7bd9a6",
+    "src/sqli_detection_lab/data.py": "e83e1f3a78cebc8e4e08e71fc0f8bc6a222203b5c231da3e54b2b1143c5a4d87",
+    "src/sqli_detection_lab/experiment.py": "a95d5f4404ca9a7ea261c6f1475068463cb68e13c369bc9d8bb12cae0478757d",
+    "src/sqli_detection_lab/features.py": "45791a0fc9f45a3feaaff493fe90dfd8107471c0b3163ebe68b7b9209400138a",
+    "src/sqli_detection_lab/io.py": "532a386a4141b900f2920a90c45b07fcadaa945b0c10b8d04203dd2d077723bb",
+    "src/sqli_detection_lab/metrics.py": "fb5b8b7f4c5589d5648ed501e882270780bc8742a2e7cb7316d1b7f551b5b062",
+    "src/sqli_detection_lab/models.py": "766cc567e533da8c33ddeada4d17de64e649efbba94477a42aafc4c222959d91",
+    "src/sqli_detection_lab/selection.py": "b2ed9ad12b56c5f4d0078c6cd58dbdbe92598cf450e78d9bf9e93246e0aea4be",
+    "src/sqli_detection_lab/smoke.py": "97ab37d1c9eff9835ffd3d6cb4f2c54469981fbf30db05dfb5dbe6eeebf45ee7"
+  },
+  "text": {
+    "analyzer": "char",
+    "max_features": 40000,
+    "min_df": 2,
+    "ngram_range": [
+      2,
+      5
+    ],
+    "sublinear_tf": true
+  },
+  "threshold": 0.5,
+  "versions": {
+    "metaheuristics-lab": "0.1.0",
+    "numpy": "2.2.6",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "sqli-detection-lab": "0.1.0"
+  }
+}

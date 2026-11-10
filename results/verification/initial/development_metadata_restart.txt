@@ -1,0 +1,24 @@
+outer=0 method=rules
+outer=0 method=structural
+outer=0 method=text
+outer=0 method=hybrid
+outer=0 method=kbest
+/workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [11 13 14 19] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+/workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:111: RuntimeWarning: invalid value encountered in divide
+  f = msb / msw
+outer=0 method=ga
+outer=0 method=gwo_s
+outer=0 method=gwo_v
+outer=0 method=random
+outer=1 method=rules
+outer=1 method=structural
+outer=1 method=text
+outer=1 method=hybrid
+outer=1 method=kbest
+/workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [11 13 14 19] are constant.
+  warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+/workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:111: RuntimeWarning: invalid value encountered in divide
+  f = msb / msw
+outer=1 method=ga
+outer=1 method=gwo_s

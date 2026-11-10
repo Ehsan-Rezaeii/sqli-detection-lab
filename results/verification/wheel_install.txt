@@ -1,0 +1,49 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing ./dist/sqli_detection_lab-0.1.0-py3-none-any.whl
+Collecting metaheuristics-lab@ git+https://github.com/Ehsan-Rezaeii/metaheuristics-lab.git@6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e (from sqli-detection-lab==0.1.0)
+  Cloning https://github.com/Ehsan-Rezaeii/metaheuristics-lab.git (to revision 6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e) to /tmp/pip-install-3nle3rn_/metaheuristics-lab_9c9fbd1ae64940d1997ee79923290440
+  Running command git clone --filter=blob:none --quiet https://github.com/Ehsan-Rezaeii/metaheuristics-lab.git /tmp/pip-install-3nle3rn_/metaheuristics-lab_9c9fbd1ae64940d1997ee79923290440
+  Running command git rev-parse -q --verify 'sha^6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e'
+  Running command git fetch -q https://github.com/Ehsan-Rezaeii/metaheuristics-lab.git 6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e
+  Resolved https://github.com/Ehsan-Rezaeii/metaheuristics-lab.git to commit 6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy==2.2.6 in ./.venv/wheel-check/lib/python3.12/site-packages (from sqli-detection-lab==0.1.0) (2.2.6)
+Requirement already satisfied: scipy==1.15.3 in ./.venv/wheel-check/lib/python3.12/site-packages (from sqli-detection-lab==0.1.0) (1.15.3)
+Requirement already satisfied: scikit-learn==1.7.2 in ./.venv/wheel-check/lib/python3.12/site-packages (from sqli-detection-lab==0.1.0) (1.7.2)
+Requirement already satisfied: fastapi==0.115.12 in ./.venv/wheel-check/lib/python3.12/site-packages (from sqli-detection-lab==0.1.0) (0.115.12)
+Requirement already satisfied: pydantic==2.11.5 in ./.venv/wheel-check/lib/python3.12/site-packages (from sqli-detection-lab==0.1.0) (2.11.5)
+Requirement already satisfied: httpx==0.28.1 in ./.venv/wheel-check/lib/python3.12/site-packages (from sqli-detection-lab==0.1.0) (0.28.1)
+Requirement already satisfied: uvicorn==0.34.2 in ./.venv/wheel-check/lib/python3.12/site-packages (from sqli-detection-lab==0.1.0) (0.34.2)
+Requirement already satisfied: matplotlib==3.10.3 in ./.venv/wheel-check/lib/python3.12/site-packages (from sqli-detection-lab==0.1.0) (3.10.3)
+Requirement already satisfied: starlette<0.47.0,>=0.40.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from fastapi==0.115.12->sqli-detection-lab==0.1.0) (0.46.2)
+Requirement already satisfied: typing-extensions>=4.8.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from fastapi==0.115.12->sqli-detection-lab==0.1.0) (4.16.0)
+Requirement already satisfied: anyio in ./.venv/wheel-check/lib/python3.12/site-packages (from httpx==0.28.1->sqli-detection-lab==0.1.0) (4.16.0)
+Requirement already satisfied: certifi in ./.venv/wheel-check/lib/python3.12/site-packages (from httpx==0.28.1->sqli-detection-lab==0.1.0) (2026.10.23)
+Requirement already satisfied: httpcore==1.* in ./.venv/wheel-check/lib/python3.12/site-packages (from httpx==0.28.1->sqli-detection-lab==0.1.0) (1.0.9)
+Requirement already satisfied: idna in ./.venv/wheel-check/lib/python3.12/site-packages (from httpx==0.28.1->sqli-detection-lab==0.1.0) (3.20)
+Requirement already satisfied: contourpy>=1.0.1 in ./.venv/wheel-check/lib/python3.12/site-packages (from matplotlib==3.10.3->sqli-detection-lab==0.1.0) (1.4.0)
+Requirement already satisfied: cycler>=0.10 in ./.venv/wheel-check/lib/python3.12/site-packages (from matplotlib==3.10.3->sqli-detection-lab==0.1.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from matplotlib==3.10.3->sqli-detection-lab==0.1.0) (4.68.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in ./.venv/wheel-check/lib/python3.12/site-packages (from matplotlib==3.10.3->sqli-detection-lab==0.1.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from matplotlib==3.10.3->sqli-detection-lab==0.1.0) (26.3)
+Requirement already satisfied: pillow>=8 in ./.venv/wheel-check/lib/python3.12/site-packages (from matplotlib==3.10.3->sqli-detection-lab==0.1.0) (13.0.0)
+Requirement already satisfied: pyparsing>=2.3.1 in ./.venv/wheel-check/lib/python3.12/site-packages (from matplotlib==3.10.3->sqli-detection-lab==0.1.0) (3.3.3)
+Requirement already satisfied: python-dateutil>=2.7 in ./.venv/wheel-check/lib/python3.12/site-packages (from matplotlib==3.10.3->sqli-detection-lab==0.1.0) (4.0.0)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from pydantic==2.11.5->sqli-detection-lab==0.1.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.33.2 in ./.venv/wheel-check/lib/python3.12/site-packages (from pydantic==2.11.5->sqli-detection-lab==0.1.0) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from pydantic==2.11.5->sqli-detection-lab==0.1.0) (0.4.5)
+Requirement already satisfied: joblib>=1.2.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from scikit-learn==1.7.2->sqli-detection-lab==0.1.0) (1.6.0)
+Requirement already satisfied: threadpoolctl>=3.1.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from scikit-learn==1.7.2->sqli-detection-lab==0.1.0) (3.8.0)
+Requirement already satisfied: click>=7.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from uvicorn==0.34.2->sqli-detection-lab==0.1.0) (8.5.1)
+Requirement already satisfied: h11>=0.8 in ./.venv/wheel-check/lib/python3.12/site-packages (from uvicorn==0.34.2->sqli-detection-lab==0.1.0) (0.16.0)
+Requirement already satisfied: cloudpickle>=3.0 in ./.venv/wheel-check/lib/python3.12/site-packages (from joblib>=1.2.0->scikit-learn==1.7.2->sqli-detection-lab==0.1.0) (3.1.2)
+Requirement already satisfied: tzdata in ./.venv/wheel-check/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib==3.10.3->sqli-detection-lab==0.1.0) (2026.6)
+sqli-detection-lab is already installed with the same version as the provided wheel. Use --force-reinstall to force an installation of the wheel.
+
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python3.12 -m pip install --upgrade pip

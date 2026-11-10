@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/sqli-detection-lab/.venv/bin/sqli-lab", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/workspace/sqli-detection-lab/src/sqli_detection_lab/cli.py", line 31, in main
+    run_limited(final, raw, args.root)
+  File "/workspace/sqli-detection-lab/src/sqli_detection_lab/experiment.py", line 322, in run_limited
+    return function(*args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/sqli-detection-lab/src/sqli_detection_lab/experiment.py", line 271, in final
+    raise ValueError("Push freeze before final scoring")
+ValueError: Push freeze before final scoring

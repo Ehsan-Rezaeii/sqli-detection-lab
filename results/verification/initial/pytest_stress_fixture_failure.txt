@@ -1,0 +1,165 @@
+.....s...........F                                                       [100%]
+=================================== FAILURES ===================================
+______________ test_synthetic_study_freeze_and_single_final_gate _______________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-2/test_synthetic_study_freeze_an0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fa08591c590>
+
+    def test_synthetic_study_freeze_and_single_final_gate(tmp_path, monkeypatch):
+        root = tmp_path / "study"
+        root.mkdir()
+        source = Path(__file__).resolve().parents[1]
+        shutil.copytree(
+            source / "src", root / "src", ignore=shutil.ignore_patterns("__pycache__", "*.egg-info")
+        )
+        shutil.copy(source / "pyproject.toml", root / "pyproject.toml")
+        git(root, "init", "-b", "main")
+        git(root, "config", "user.name", "Synthetic Test")
+        git(root, "config", "user.email", "synthetic@example.invalid")
+        remote = tmp_path / "remote.git"
+        subprocess.run(["git", "init", "--bare", str(remote)], check=True, capture_output=True)
+        git(root, "remote", "add", "origin", str(remote))
+        x = np.array(
+            [f"ordinary catalogue value {i}" for i in range(30)]
+            + [f"synthetic union select item from table {i}" for i in range(30)],
+            dtype=object,
+        )
+        y = np.repeat([0, 1], 30)
+        groups = np.array([group_id(t) for t in x])
+        cohort = Cohort(x, y, groups, {"synthetic_only": True})
+        dev, test = folds(y, groups, n_splits=5, seed=2027)[0]
+    
+        def prepare(raw, output):
+            write_json(output / "dataset_manifest.json", {"synthetic_only": True})
+            write_json(output / "source_audit.json", {"synthetic_only": True})
+            write_json(
+                output / "split_manifest.json",
+                {
+                    "development": describe(y, groups, dev),
+                    "test": describe(y, groups, test),
+                    "group_overlap": 0,
+                    "synthetic_only": True,
+                },
+            )
+            return cohort, dev, test
+    
+        monkeypatch.setattr(experiment, "prepare", prepare)
+        monkeypatch.setattr(experiment, "parse", lambda raw: cohort)
+>       raw = root / "ignored_synthetic.csv"
+
+tests/test_study_gate.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sqli_detection_lab/experiment.py:141: in development
+    "mask",
+src/sqli_detection_lab/experiment.py:190: in sensitivity_diagnostic
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+y = array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1])
+groups = array(['50c423be4a7d4a2686d039106f22fb4df2772975175990a19b8f6aff6c228a95',
+       '50c423be4a7d4a2686d039106f22fb4df27...386906708c9523ce93b2b',
+       'b95da828ccfa3b87c9c58956fe32f9c4109bd01866c386906708c9523ce93b2b'],
+      dtype='<U64')
+
+    def folds(y, groups, *, n_splits=3, seed=2029):
+        splitter = StratifiedGroupKFold(n_splits=n_splits, shuffle=True, random_state=seed)
+        pairs = list(splitter.split(np.zeros(len(y)), y, groups))
+        for train, valid in pairs:
+            if set(groups[train]) & set(groups[valid]):
+                raise ValueError("Group overlap")
+            if len(set(y[train])) != 2 or len(set(y[valid])) != 2:
+>               raise ValueError("Insufficient class support")
+E               ValueError: Insufficient class support
+
+src/sqli_detection_lab/data.py:140: ValueError
+----------------------------- Captured stdout call -----------------------------
+outer=0 method=rules
+outer=0 method=structural
+outer=0 method=text
+outer=0 method=hybrid
+outer=0 method=kbest
+outer=0 method=ga
+outer=0 method=gwo_s
+outer=0 method=gwo_v
+outer=0 method=random
+outer=1 method=rules
+outer=1 method=structural
+outer=1 method=text
+outer=1 method=hybrid
+outer=1 method=kbest
+outer=1 method=ga
+outer=1 method=gwo_s
+outer=1 method=gwo_v
+outer=1 method=random
+outer=2 method=rules
+outer=2 method=structural
+outer=2 method=text
+outer=2 method=hybrid
+outer=2 method=kbest
+outer=2 method=ga
+outer=2 method=gwo_s
+outer=2 method=gwo_v
+outer=2 method=random
+full-development method=ga seed=0
+full-development method=ga seed=1
+full-development method=ga seed=2
+full-development method=gwo_s seed=0
+full-development method=gwo_s seed=1
+full-development method=gwo_s seed=2
+full-development method=gwo_v seed=0
+full-development method=gwo_v seed=1
+full-development method=gwo_v seed=2
+full-development method=random seed=0
+full-development method=random seed=1
+full-development method=random seed=2
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:37
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+tests/test_core.py::test_all_baselines_and_seed_selection
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [ 4  5  6  7  8  9 10 11 12 13 14 15 16 17 19] are constant.
+    warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+
+tests/test_core.py::test_all_baselines_and_seed_selection
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:111: RuntimeWarning: divide by zero encountered in divide
+    f = msb / msw
+
+tests/test_core.py::test_all_baselines_and_seed_selection
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:111: RuntimeWarning: invalid value encountered in divide
+    f = msb / msw
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Name                                   Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------
+src/sqli_detection_lab/__init__.py         1      0   100%
+src/sqli_detection_lab/api.py             44      0   100%
+src/sqli_detection_lab/artifacts.py       75     47    37%   16, 21-25, 31, 38-41, 45-46, 51, 53-54, 66-67, 69-111
+src/sqli_detection_lab/cli.py             27     27     0%   3-37
+src/sqli_detection_lab/data.py           102     20    80%   41-45, 48-50, 63, 73, 77, 83-84, 138, 155-167
+src/sqli_detection_lab/experiment.py     162     79    51%   22, 83, 105, 115, 130-134, 150-180, 192-204, 215-229, 252-296, 306-312
+src/sqli_detection_lab/features.py        30      0   100%
+src/sqli_detection_lab/io.py              13      0   100%
+src/sqli_detection_lab/metrics.py         12      0   100%
+src/sqli_detection_lab/models.py          59      2    97%   56, 58
+src/sqli_detection_lab/selection.py       62      2    97%   27, 103
+src/sqli_detection_lab/smoke.py           14     14     0%   3-26
+--------------------------------------------------------------------
+TOTAL                                    601    191    68%
+=========================== short test summary info ============================
+FAILED tests/test_study_gate.py::test_synthetic_study_freeze_and_single_final_gate
+1 failed, 16 passed, 1 skipped, 13 warnings in 65.28s (0:01:05)

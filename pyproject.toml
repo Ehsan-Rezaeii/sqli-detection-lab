@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqli-detection-lab"
+version = "0.1.0"
+description = "Experimental, group-audited SQLi-like parameter classification"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+ "numpy==2.2.6", "scipy==1.15.3", "scikit-learn==1.7.2",
+ "fastapi==0.115.12", "pydantic==2.11.5", "httpx==0.28.1",
+ "uvicorn==0.34.2", "matplotlib==3.10.3",
+ "metaheuristics-lab @ git+https://github.com/Ehsan-Rezaeii/metaheuristics-lab.git@6b4ef0fa3d72f608146f3dd7eabb84bf39fa896e",
+]
+[project.optional-dependencies]
+dev = ["pytest==8.3.5", "pytest-cov==6.1.1", "ruff==0.11.13", "build==1.2.2.post1"]
+[project.scripts]
+sqli-lab = "sqli_detection_lab.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["final: finalized artifact checks (explicitly required by final-head CI)"]
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]

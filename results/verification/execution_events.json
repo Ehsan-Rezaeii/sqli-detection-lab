@@ -56,5 +56,17 @@
     "exit_code": 0,
     "outcome": "24 traces, 1440 objective calls, 4320 search fits, 9 model identities and final metrics reconstructed from aggregate scores verified.",
     "phase": "final independent artifact audit"
+  },
+  {
+    "command": "git diff --cached --name-only main",
+    "exit_code": 128,
+    "outcome": "No local main branch; used origin/main. No scientific files affected.",
+    "phase": "inventory"
+  },
+  {
+    "command": "python inline handoff updater",
+    "exit_code": 1,
+    "outcome": "Syntax error before writes; corrected helper. No scientific files affected.",
+    "phase": "documentation"
   }
 ]

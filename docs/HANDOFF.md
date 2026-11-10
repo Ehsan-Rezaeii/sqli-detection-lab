@@ -6,7 +6,12 @@ remote CI status. The repository remains a reviewable, unmerged feature branch.
 Development evidence is committed at `3d59540`; freeze is
 `9184886cab5b1c851e2ad00237455b641979cece`, with SHA-256
 `ef9a9a33ef62fe41fb45908493cfd7458ef78b5e597e01009ba08e630859f9db`.
-Final start/completion markers prove one scoring pass after the pushed freeze.
+Final start/completion markers record one scoring pass after the pushed freeze.
+[PR #1](https://github.com/Ehsan-Rezaeii/sqli-detection-lab/pull/1) is open against main
+and must remain unmerged for owner review. [Actions evidence](https://github.com/Ehsan-Rezaeii/sqli-detection-lab/actions/runs/42898191861)
+passed Python 3.10/3.12/3.13, each 20 tests and 93% coverage, plus all engineering
+and artifact checks. The final completion message supplies the latest head/run.
+The [changed-file inventory](../results/changed_files.txt) lists every changed path.
 The PR/head and CI links are supplied in the completion report and CI record.
 
 The demo model is **hybrid**, selected solely by the declared development outer

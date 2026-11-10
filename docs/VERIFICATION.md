@@ -68,4 +68,18 @@ outside the source checkout, avoiding accidental reuse of an earlier wheel.
 Final-head CI uses Python 3.10/3.12/3.13, core/synthetic tests, coverage, lint,
 format, smoke, build, clean wheel import and mandatory final artifact audit when
 `results/FINALIZED` exists. Pre-final CI does not erroneously require artifacts
-that have not been scored. Actual remote run URLs and conclusions will be recorded.
+that have not been scored. The completed remote run on evidence head
+`f0f0b8d74ab3edd6fde816b36b779b58344e896b` is
+[Actions 42898191861](https://github.com/Ehsan-Rezaeii/sqli-detection-lab/actions/runs/42898191861).
+All Python 3.10/3.12/3.13 jobs concluded **success**, each with 20 passed tests,
+93% statement coverage, Ruff lint/format, smoke, mandatory final audit, source/wheel
+build and clean wheel install/import. Job steps, URLs and relevant log excerpts
+are saved in `results/verification/github_actions.json`. Documentation-only
+follow-up commits retain the identical frozen scientific source and artifacts;
+the PR Checks tab provides the latest head's independent rerun.
+
+One inventory command used absent local ref main and exited 128; origin/main
+corrected it. A handoff-edit helper had a Python syntax error before any writes;
+correcting the helper completed the documentation. Neither affected scientific
+files, model fitting or scoring. No source, frozen model, mask, threshold or
+final score was altered after scoring.

@@ -14,3 +14,13 @@ All conflict groups are quarantined in full; other duplicate rows retain their
 multiplicity and are constrained to one partition. Additional development-only
 sensitivity groups remove all non-alphanumeric characters and replace digit runs
 with `0`; this is a stress diagnostic, not an independence guarantee.
+
+## Execution status
+
+All six milestones completed with measured evidence: provenance and primary/source
+audits, all nine development/final methods, 24 optimizer traces and seed variation,
+committed/pushed freeze before one final pass, safe API/TestClient tests, 20 passing
+tests/93% coverage, Ruff, smoke, build, wheel install/import and successful three-version
+Actions matrix. PR #1 remains open and unmerged. See HANDOFF and VERIFICATION.
+Unknown constituent data rights and external/production generalization remain
+limitations; they are not represented as verified capabilities.

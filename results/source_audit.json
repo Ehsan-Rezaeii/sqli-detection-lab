@@ -1,0 +1,106 @@
+{
+  "official_train_test_overlap": {
+    "canonical": 0,
+    "raw": 0
+  },
+  "payload_full.csv": {
+    "bytes": 1996540,
+    "canonical_duplicate_excess": 0,
+    "categories": {
+      "cmdi": 89,
+      "norm": 19304,
+      "path-traversal": 290,
+      "sqli": 10852,
+      "xss": 532
+    },
+    "header": [
+      "payload",
+      "length",
+      "attack_type",
+      "label"
+    ],
+    "length_mismatches_by_category": {
+      "xss": 15
+    },
+    "multicategory_canonical_groups": 0,
+    "raw_duplicate_excess": 0,
+    "records": 31067,
+    "sha256": "a4e62ba13435ad3dd583c5790db2175629020fc41c56e1b26baa02a9ae45f03d"
+  },
+  "payload_test.csv": {
+    "bytes": 666346,
+    "canonical_duplicate_excess": 0,
+    "categories": {
+      "cmdi": 30,
+      "norm": 6434,
+      "path-traversal": 97,
+      "sqli": 3617,
+      "xss": 177
+    },
+    "header": [
+      "payload",
+      "length",
+      "attack_type",
+      "label"
+    ],
+    "length_mismatches_by_category": {
+      "xss": 8
+    },
+    "multicategory_canonical_groups": 0,
+    "raw_duplicate_excess": 0,
+    "records": 10355,
+    "sha256": "d8015e256ce4499c8ac7a8be8dd25de6487cf018601edf1a03a408a2c8f0e39d"
+  },
+  "payload_test_lexical.csv": {
+    "bytes": 358223,
+    "canonical_duplicate_excess": 0,
+    "categories": {
+      "js-syntax": 19,
+      "norm": 1000,
+      "sql-syntax": 87
+    },
+    "header": [
+      "payload",
+      "length",
+      "attack_type",
+      "label"
+    ],
+    "length_mismatches_by_category": {
+      "js-syntax": 4,
+      "norm": 4
+    },
+    "multicategory_canonical_groups": 0,
+    "raw_duplicate_excess": 0,
+    "records": 1106,
+    "sha256": "77b28531840028fd34bfb790640977767d98879e8abd0ee7497b1e8d6d91c56a"
+  },
+  "payload_train.csv": {
+    "bytes": 1330236,
+    "canonical_duplicate_excess": 0,
+    "categories": {
+      "cmdi": 59,
+      "norm": 12870,
+      "path-traversal": 193,
+      "sqli": 7235,
+      "xss": 355
+    },
+    "header": [
+      "payload",
+      "length",
+      "attack_type",
+      "label"
+    ],
+    "length_mismatches_by_category": {
+      "xss": 7
+    },
+    "multicategory_canonical_groups": 0,
+    "raw_duplicate_excess": 0,
+    "records": 20712,
+    "sha256": "dfa6e59c87b2bafc485c9cb14d37e3f86607d180e5a22e7c46dae6d3d1dd6a16"
+  },
+  "source_commit": "926670a710283f87c05b554680facf3f9530548c",
+  "source_document_hashes": {
+    "LICENSE": "bf7e07e81bc00bfc421ec164c57bacf1ed15917c2d48843a5bf1a0c1a6de8b46",
+    "README.md": "a456b425b9b78449bccb5b5953b96ea1f6449763d7e16d8050b850cff9531cb8"
+  }
+}

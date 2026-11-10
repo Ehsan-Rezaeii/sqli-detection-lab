@@ -1,0 +1,6 @@
+{
+  "changed_predictions": 0,
+  "development_only": true,
+  "reason": "Bound every rule whitespace run to 32 for predictable regex work; no model/threshold tuning.",
+  "rows": 24124
+}

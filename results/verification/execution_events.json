@@ -1,0 +1,36 @@
+[
+  {
+    "command": "pytest -q --cov=sqli_detection_lab --cov-report=term-missing",
+    "exit_code": 1,
+    "outcome": "5 failed, 11 passed, 1 skipped; mock constructor metadata and missing synthetic freeze fixture; corrected",
+    "phase": "initial"
+  },
+  {
+    "command": "pytest -q --cov=sqli_detection_lab --cov-report=term-missing",
+    "exit_code": 1,
+    "outcome": "1 failed, 16 passed, 1 skipped; stress grouping collapsed numbered fixture into only two groups; changed synthetic identifiers to distinct alphabetic tokens",
+    "phase": "synthetic integration initial"
+  },
+  {
+    "command": "sqli-lab development",
+    "outcome": "Two early runs intentionally stopped before completion to bound rule intermediary and correct representation/split metadata. No held-out scoring.",
+    "phase": "early interrupted development only"
+  },
+  {
+    "command": "sqli-lab development",
+    "exit_code": 0,
+    "outcome": "27 outer evaluations, 24 searches, 9 sensitivity fits and 9 development model fits; stdout saved",
+    "phase": "completed development"
+  },
+  {
+    "command": "gh auth status; gh api repos/Ehsan-Rezaeii/sqli-detection-lab",
+    "outcome": "CLI API unavailable/Forbidden; Git transport works, connected GitHub tools used for PR and CI",
+    "phase": "connectivity"
+  },
+  {
+    "command": "python experiments/report.py",
+    "exit_code": 0,
+    "outcome": "Matplotlib fell back to writable temporary cache; no result impact",
+    "phase": "development report"
+  }
+]

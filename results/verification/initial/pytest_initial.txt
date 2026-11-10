@@ -1,0 +1,220 @@
+...F.s....FFFF...                                                        [100%]
+=================================== FAILURES ===================================
+_____________________ test_api_validation_and_no_training ______________________
+
+local_model = (PosixPath('/tmp/pytest-of-agent/pytest-0/test_api_validation_and_no_tra0'), {'demo_method': 'structural', 'model_hash...cd1'}, 'versions': {'metaheuristics-lab': '0.1.0', 'numpy': '2.2.6', 'scikit-learn': '1.7.2', 'scipy': '1.15.3', ...}})
+
+    def test_api_validation_and_no_training(local_model):
+        root, frozen = local_model
+        with patch("sqli_detection_lab.api.verify_freeze", return_value=frozen):
+            with patch(
+                "sklearn.linear_model.LogisticRegression.fit", side_effect=AssertionError("training")
+            ):
+                with TestClient(create_app(root)) as client:
+>                   assert client.get("/health").status_code == 200
+E                   AssertionError: assert 503 == 200
+E                    +  where 503 = <Response [503 Service Unavailable]>.status_code
+E                    +    where <Response [503 Service Unavailable]> = get('/health')
+E                    +      where get = <starlette.testclient.TestClient object at 0x7f4a45acb830>.get
+
+tests/test_artifacts_api.py:78: AssertionError
+________________ test_actual_constructor_and_budget_kwargs[ga] _________________
+
+method = 'ga'
+synthetic = (array(['ordinary item 0', 'ordinary item 1', 'ordinary item 2',
+       'ordinary item 3', 'ordinary item 4', 'ordinar... '21', '22', '23',
+       '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34',
+       '35'], dtype='<U2'))
+
+    @pytest.mark.parametrize("method", SEARCHES)
+    def test_actual_constructor_and_budget_kwargs(method, synthetic):
+        from metaheuristics_lab import BinaryGA, BinaryGWO, RandomSearch
+    
+        import sqli_detection_lab.selection as module
+    
+        constructor = {"ga": BinaryGA, "gwo_s": BinaryGWO, "gwo_v": BinaryGWO, "random": RandomSearch}[
+            method
+        ]
+        with patch.object(module, constructor.__name__, wraps=constructor) as factory:
+>           instance, config = optimizer(method)
+
+tests/test_core.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sqli_detection_lab/selection.py:32: in optimizer
+    "class": constructor.__name__,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='BinaryGA' id='139956970745360'>, name = '__name__'
+
+    def __getattr__(self, name):
+        if name in {'_mock_methods', '_mock_unsafe'}:
+            raise AttributeError(name)
+        elif self._mock_methods is not None:
+            if name not in self._mock_methods or name in _all_magics:
+                raise AttributeError("Mock object has no attribute %r" % name)
+        elif _is_magic(name):
+>           raise AttributeError(name)
+E           AttributeError: __name__
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py:662: AttributeError
+_______________ test_actual_constructor_and_budget_kwargs[gwo_s] _______________
+
+method = 'gwo_s'
+synthetic = (array(['ordinary item 0', 'ordinary item 1', 'ordinary item 2',
+       'ordinary item 3', 'ordinary item 4', 'ordinar... '21', '22', '23',
+       '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34',
+       '35'], dtype='<U2'))
+
+    @pytest.mark.parametrize("method", SEARCHES)
+    def test_actual_constructor_and_budget_kwargs(method, synthetic):
+        from metaheuristics_lab import BinaryGA, BinaryGWO, RandomSearch
+    
+        import sqli_detection_lab.selection as module
+    
+        constructor = {"ga": BinaryGA, "gwo_s": BinaryGWO, "gwo_v": BinaryGWO, "random": RandomSearch}[
+            method
+        ]
+        with patch.object(module, constructor.__name__, wraps=constructor) as factory:
+>           instance, config = optimizer(method)
+
+tests/test_core.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sqli_detection_lab/selection.py:32: in optimizer
+    "class": constructor.__name__,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='BinaryGWO' id='139956973254080'>, name = '__name__'
+
+    def __getattr__(self, name):
+        if name in {'_mock_methods', '_mock_unsafe'}:
+            raise AttributeError(name)
+        elif self._mock_methods is not None:
+            if name not in self._mock_methods or name in _all_magics:
+                raise AttributeError("Mock object has no attribute %r" % name)
+        elif _is_magic(name):
+>           raise AttributeError(name)
+E           AttributeError: __name__
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py:662: AttributeError
+_______________ test_actual_constructor_and_budget_kwargs[gwo_v] _______________
+
+method = 'gwo_v'
+synthetic = (array(['ordinary item 0', 'ordinary item 1', 'ordinary item 2',
+       'ordinary item 3', 'ordinary item 4', 'ordinar... '21', '22', '23',
+       '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34',
+       '35'], dtype='<U2'))
+
+    @pytest.mark.parametrize("method", SEARCHES)
+    def test_actual_constructor_and_budget_kwargs(method, synthetic):
+        from metaheuristics_lab import BinaryGA, BinaryGWO, RandomSearch
+    
+        import sqli_detection_lab.selection as module
+    
+        constructor = {"ga": BinaryGA, "gwo_s": BinaryGWO, "gwo_v": BinaryGWO, "random": RandomSearch}[
+            method
+        ]
+        with patch.object(module, constructor.__name__, wraps=constructor) as factory:
+>           instance, config = optimizer(method)
+
+tests/test_core.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sqli_detection_lab/selection.py:32: in optimizer
+    "class": constructor.__name__,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='BinaryGWO' id='139956970742720'>, name = '__name__'
+
+    def __getattr__(self, name):
+        if name in {'_mock_methods', '_mock_unsafe'}:
+            raise AttributeError(name)
+        elif self._mock_methods is not None:
+            if name not in self._mock_methods or name in _all_magics:
+                raise AttributeError("Mock object has no attribute %r" % name)
+        elif _is_magic(name):
+>           raise AttributeError(name)
+E           AttributeError: __name__
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py:662: AttributeError
+______________ test_actual_constructor_and_budget_kwargs[random] _______________
+
+method = 'random'
+synthetic = (array(['ordinary item 0', 'ordinary item 1', 'ordinary item 2',
+       'ordinary item 3', 'ordinary item 4', 'ordinar... '21', '22', '23',
+       '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34',
+       '35'], dtype='<U2'))
+
+    @pytest.mark.parametrize("method", SEARCHES)
+    def test_actual_constructor_and_budget_kwargs(method, synthetic):
+        from metaheuristics_lab import BinaryGA, BinaryGWO, RandomSearch
+    
+        import sqli_detection_lab.selection as module
+    
+        constructor = {"ga": BinaryGA, "gwo_s": BinaryGWO, "gwo_v": BinaryGWO, "random": RandomSearch}[
+            method
+        ]
+        with patch.object(module, constructor.__name__, wraps=constructor) as factory:
+>           instance, config = optimizer(method)
+
+tests/test_core.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sqli_detection_lab/selection.py:32: in optimizer
+    "class": constructor.__name__,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='RandomSearch' id='139956970738640'>, name = '__name__'
+
+    def __getattr__(self, name):
+        if name in {'_mock_methods', '_mock_unsafe'}:
+            raise AttributeError(name)
+        elif self._mock_methods is not None:
+            if name not in self._mock_methods or name in _all_magics:
+                raise AttributeError("Mock object has no attribute %r" % name)
+        elif _is_magic(name):
+>           raise AttributeError(name)
+E           AttributeError: __name__
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py:662: AttributeError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:37
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+tests/test_core.py::test_all_baselines_and_seed_selection
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:110: UserWarning: Features [ 4  5  6  7  8  9 10 11 12 13 14 15 16 17 19] are constant.
+    warnings.warn("Features %s are constant." % constant_features_idx, UserWarning)
+
+tests/test_core.py::test_all_baselines_and_seed_selection
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:111: RuntimeWarning: divide by zero encountered in divide
+    f = msb / msw
+
+tests/test_core.py::test_all_baselines_and_seed_selection
+  /workspace/sqli-detection-lab/.venv/lib/python3.12/site-packages/sklearn/feature_selection/_univariate_selection.py:111: RuntimeWarning: invalid value encountered in divide
+    f = msb / msw
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Name                                   Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------
+src/sqli_detection_lab/__init__.py         1      0   100%
+src/sqli_detection_lab/api.py             44      5    89%   38, 52, 57-63
+src/sqli_detection_lab/artifacts.py       69     32    54%   24, 37-41, 45-46, 48-49, 51, 69-100
+src/sqli_detection_lab/cli.py             27     27     0%   3-37
+src/sqli_detection_lab/data.py           102     23    77%   34-35, 41-45, 48-50, 63, 73, 77, 83-84, 138, 140, 155-167
+src/sqli_detection_lab/experiment.py     151    151     0%   3-300
+src/sqli_detection_lab/features.py        30      0   100%
+src/sqli_detection_lab/io.py              13      0   100%
+src/sqli_detection_lab/metrics.py         12      1    92%   41
+src/sqli_detection_lab/models.py          59      5    92%   54, 56, 78, 85, 92
+src/sqli_detection_lab/selection.py       62     16    74%   27, 39, 78-83, 97-104
+src/sqli_detection_lab/smoke.py           14     14     0%   3-26
+--------------------------------------------------------------------
+TOTAL                                    584    274    53%
+=========================== short test summary info ============================
+FAILED tests/test_artifacts_api.py::test_api_validation_and_no_training - Ass...
+FAILED tests/test_core.py::test_actual_constructor_and_budget_kwargs[ga] - At...
+FAILED tests/test_core.py::test_actual_constructor_and_budget_kwargs[gwo_s]
+FAILED tests/test_core.py::test_actual_constructor_and_budget_kwargs[gwo_v]
+FAILED tests/test_core.py::test_actual_constructor_and_budget_kwargs[random]
+5 failed, 11 passed, 1 skipped, 4 warnings in 5.98s

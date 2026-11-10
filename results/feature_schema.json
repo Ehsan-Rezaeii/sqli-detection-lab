@@ -1,0 +1,105 @@
+{
+  "features": [
+    {
+      "definition": "Character length",
+      "index": 0,
+      "name": "length"
+    },
+    {
+      "definition": "Unicode digit count / max(1,length)",
+      "index": 1,
+      "name": "digit_ratio"
+    },
+    {
+      "definition": "Unicode alphabetic count / max(1,length)",
+      "index": 2,
+      "name": "letter_ratio"
+    },
+    {
+      "definition": "Unicode whitespace count / max(1,length)",
+      "index": 3,
+      "name": "space_ratio"
+    },
+    {
+      "definition": "ASCII string.punctuation count / max(1,length)",
+      "index": 4,
+      "name": "punctuation_ratio"
+    },
+    {
+      "definition": "Single quote count",
+      "index": 5,
+      "name": "single_quotes"
+    },
+    {
+      "definition": "Double quote count",
+      "index": 6,
+      "name": "double_quotes"
+    },
+    {
+      "definition": "Opening plus closing parenthesis count",
+      "index": 7,
+      "name": "parentheses"
+    },
+    {
+      "definition": "Semicolon count",
+      "index": 8,
+      "name": "semicolons"
+    },
+    {
+      "definition": "Equals count",
+      "index": 9,
+      "name": "equals"
+    },
+    {
+      "definition": "Nonoverlapping -- count",
+      "index": 10,
+      "name": "dash_comments"
+    },
+    {
+      "definition": "Nonoverlapping /* plus */ counts",
+      "index": 11,
+      "name": "block_comments"
+    },
+    {
+      "definition": "Hash count",
+      "index": 12,
+      "name": "hashes"
+    },
+    {
+      "definition": "Backslash count",
+      "index": 13,
+      "name": "backslashes"
+    },
+    {
+      "definition": "%HH hexadecimal occurrences",
+      "index": 14,
+      "name": "percent_encoded"
+    },
+    {
+      "definition": "Whitespace-separated token count",
+      "index": 15,
+      "name": "tokens"
+    },
+    {
+      "definition": "select/union/insert/update/delete/drop/from/where/sleep/benchmark tokens",
+      "index": 16,
+      "name": "sql_keywords"
+    },
+    {
+      "definition": "or/and/not/true/false/null tokens",
+      "index": 17,
+      "name": "boolean_keywords"
+    },
+    {
+      "definition": "Unique codepoints / max(1,length)",
+      "index": 18,
+      "name": "unique_char_ratio"
+    },
+    {
+      "definition": "Non-ASCII count / max(1,length)",
+      "index": 19,
+      "name": "non_ascii_ratio"
+    }
+  ],
+  "semantics": "Verbatim input; no URL decoding; keyword counters ignore case."
+}

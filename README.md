@@ -127,3 +127,4 @@ These are separate `sqli-lab` CLI commands except for the Git commits and report
 This is the **security-oriented classification application** in a five-project research portfolio. It reuses [Metaheuristics Lab](https://github.com/Ehsan-Rezaeii/metaheuristics-lab) as an installed optimization dependency. The other applications study [breast cancer feature selection](https://github.com/Ehsan-Rezaeii/breast-cancer-feature-selection), [software defect prediction on Apache Camel](https://github.com/Ehsan-Rezaeii/software-defect-prediction), and [search-based test generation](https://github.com/Ehsan-Rezaeii/search-based-test-generation). Their datasets, objectives and metrics are different; results should not be compared as if they measured the same task.
 
 **License:** [MIT](LICENSE) for original project code. Upstream algorithms, data and publications retain their own attribution and rights.
+
